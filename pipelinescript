@@ -43,3 +43,7 @@ stages {
     }
   }
   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
+  
+  environment {
+    GITHUB_CREDENTIALS = credentials('my-github-credentials-id')
+  }
