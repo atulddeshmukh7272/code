@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    tools {
+        maven "MAVEN3"
+        jdk "Oraclejdk8"
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'asdfghjkl123',
+                        url: 'https://github.com/atulddeshmukh7272/SpringWithJenkins.git'
+                    ]]
+                ])
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install -f SpringForJenkin/pom.xml'
+                
+                
+            }
+        }
+    }
+}
