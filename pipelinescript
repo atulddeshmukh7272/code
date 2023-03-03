@@ -48,3 +48,5 @@ stages {
     GITHUB_CREDENTIALS = credentials('my-github-credentials-id')
   }
 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
+https://www.coachdevops.com/2020/03/how-to-create-jenkinsfile-how-to.html
+
